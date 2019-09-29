@@ -3,13 +3,13 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants
   def index
-    @restaurants = Todo.all
+    @restaurants = Restaurant.all
     json_response(@restaurants)
   end
 
   # POST /restaurants
   def create
-    @restaurant = Todo.create!(restaurant_params)
+    @restaurant = Restaurant.create!(restaurant_params)
     json_response(@restaurant, :created)
   end
 
@@ -38,6 +38,6 @@ class RestaurantsController < ApplicationController
   end
 
   def set_restaurant
-    @restaurant = Todo.find(params[:id])
+    @restaurant = Restaurant.find(params[:id])
   end
 end

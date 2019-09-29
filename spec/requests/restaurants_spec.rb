@@ -44,7 +44,7 @@ RSpec.describe 'Restaurants API', type: :request do
       end
 
       it 'returns a not found message' do
-        expect(response.body).to match(/Couldn't find restaurant/)
+        expect(response.body).to match("{\"message\":\"Couldn't find Restaurant with 'id'=100\"}")
       end
     end
   end
@@ -75,7 +75,7 @@ RSpec.describe 'Restaurants API', type: :request do
 
       it 'returns a validation failure message' do
         expect(response.body)
-            .to match(/Validation failed: Created by can't be blank/)
+            .to match("{\"message\":\"Validation failed: Name can't be blank, Address can't be blank\"}")
       end
     end
   end
