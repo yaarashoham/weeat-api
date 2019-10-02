@@ -77,6 +77,7 @@ RSpec.describe 'Restaurants API', type: :request do
         expect(response.body)
             .to match("{\"message\":\"Validation failed: Address can't be blank\"}")
             # .to match("{\"message\":\"Validation failed: Name can't be blank, Address can't be blank\"}")
+            # consider having a test with name missing?
       end
     end
   end

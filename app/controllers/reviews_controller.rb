@@ -14,8 +14,8 @@ class ReviewsController < ApplicationController
 
   # POST /restaurants/:restaurant_id/reviews
   def create
-    @restaurant.reviews.create!(review_params)
-    json_response(@restaurant, :created)
+    @review = @restaurant.reviews.create!(review_params)
+    json_response(@review, :created)
   end
 
   # PUT /restaurants/:restaurant_id/reviews/:id
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.permit(:name, :rating, :comment)
+    JSON.parse(request.body.read).symbolize_keys.slice(:name, :rating, :comment)
   end
 
   def set_restaurant
