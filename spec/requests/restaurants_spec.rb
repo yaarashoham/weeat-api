@@ -75,7 +75,8 @@ RSpec.describe 'Restaurants API', type: :request do
 
       it 'returns a validation failure message' do
         expect(response.body)
-            .to match("{\"message\":\"Validation failed: Name can't be blank, Address can't be blank\"}")
+            .to match("{\"message\":\"Validation failed: Address can't be blank\"}")
+            # .to match("{\"message\":\"Validation failed: Name can't be blank, Address can't be blank\"}")
       end
     end
   end

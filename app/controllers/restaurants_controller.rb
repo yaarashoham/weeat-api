@@ -34,7 +34,7 @@ class RestaurantsController < ApplicationController
 
   def restaurant_params
     # whitelist params
-    params.permit(:title, :created_by)
+    params.permit(:name, :address)
   end
 
   def set_restaurant
