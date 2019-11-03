@@ -1,0 +1,14 @@
+.add-review {
+    align-self: self-end;
+}
+.title-container {
+   font-size: 20px;
+    color: white;
+}
+.search-row {
+    background-image: url("./wide-middle-eastern-food.jpg");
+    opacity: 0.6;
+}
+.search-bar{
+    width: 50%;
+}

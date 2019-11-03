@@ -1,0 +1,43 @@
+.App {
+    text-align: center;
+    background-color: white;
+    height: 100%;
+}
+
+.search-row {
+    text-align: center;
+    background-color: lightblue;
+    height: 33%;
+}
+
+.filter-row {
+    text-align: center;
+    background-color: #f54343;
+
+}
+
+.results-row{
+    text-align: left;
+    background-color: lightseagreen;
+    min-height: 775px;
+    flex-flow: row;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}

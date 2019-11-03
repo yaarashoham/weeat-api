@@ -1,0 +1,12 @@
+#filter-row {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+}
+#customized-select {
+    width: 300px;
+}
+label {
+    text-align: left;
+    color: white;
+}
