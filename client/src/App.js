@@ -15,9 +15,9 @@ class App extends Component {
           <div className="filter-row">
               <FilterRow />
           </div>
-          <div className="results-row">
-              <ResultsRow />
-          </div>
+
+                <ResultsRow />
+
         </div>
     );
   }
