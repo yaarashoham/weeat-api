@@ -1,23 +1,63 @@
 import React, {Component} from 'react';
 import './App.css';
-import SearchRow from "./SearchRow";
-import FilterRow from "./FilterRow";
-import ResultsRow from "./ResultsRow";
+import SearchRow from "./SearchRow/SearchRow";
+import FilterRow from "./FilterRow/FilterRow";
+import ResultsRow from "./ResultsRow/ResultsRow";
 import {withStyles} from "@material-ui/core";
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            isLoaded: false,
+            restaurants: [],
+            filterText: ''
+        };
+        this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+    }
+    componentDidMount() {
+        fetch("http://localhost:3001/restaurants")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result);
+                    this.setState({
+                        isLoaded: true,
+                        restaurants: result
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
+
+    handleFilterTextChange(filterText) {
+        this.setState({
+            filterText: filterText
+        });
+    }
+
   render() {
     return (
         <div className="App">
           <div className="search-row">
-              <SearchRow />
+              <SearchRow
+                  filterText={this.state.filterText}
+                  onFilterTextChange={this.handleFilterTextChange}
+              />
           </div>
           <div className="filter-row">
               <FilterRow />
           </div>
-
-                <ResultsRow />
-
+          <ResultsRow
+              restaurants={this.state.restaurants}
+              filterText={this.state.filterText}
+              />
         </div>
     );
   }

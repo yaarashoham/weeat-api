@@ -123,4 +123,7 @@ export default function FilterRow() {
     // }
 }
 
+const CUISINE = ["Humus", "Hamburger", "Asian", "Salad"];
+const RATING = [null, 1, 2, 3];
+const SPEED = ["Up to 30 minutes", "Up to 1 hour", "Up to 1 hour and 30 minutes"];
 //export default FilterRow;
